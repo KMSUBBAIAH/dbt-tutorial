@@ -1,0 +1,26 @@
+my_snowflake:
+  target: dev
+  outputs:
+    dev:
+      type: snowflake
+      # https://<account>.snowflakecomputing.com
+      account: [account]
+
+      # User/password auth
+      user: [snowflake_username]
+      password: [snowflake_password]
+
+      role: [custom_role/any_role name]
+      database: [custom_db/any_db name]
+      warehouse: [custom_wh/any_wh name]
+      schema: [custom_schema/any_schema name]
+      threads: [default:1/upto 10]
+      client_session_keep_alive: False
+      query_tag: [anything/ex:dbt-tag]
+
+      # optional
+      connect_retries: 0 # default 0
+      connect_timeout: 10 # default: 10
+      retry_on_database_errors: False # default: false
+      retry_all: False  # default: false
+      reuse_connections: False # default: false (available v1.4+)
