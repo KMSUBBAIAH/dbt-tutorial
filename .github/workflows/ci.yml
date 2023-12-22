@@ -35,7 +35,7 @@ jobs:
             python-version: '3.10' 
 
       - name: Run py script
-        run: python my_script.py
+        run: python create_file.py
 
       - name: List all new files
         run: ls
